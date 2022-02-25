@@ -6,4 +6,5 @@ public class Employee_main {
         System.out.println(two);
         one.palk();
         two.palk();
+    }
 }

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class game2 {
@@ -16,9 +17,13 @@ public class game2 {
                 // Math.random() -- 0 .. 0.9999  -  0 ... 4.9999 -- 0..2 .. 1..3
 
                 World world = new World(5,10);
-                Player mangija1 = new Player(world.worldHeight, world.worldWidth);
-                Player mangija2 = new Player(world.worldHeight,world.worldWidth);
-                Enemy vaenlane1 = new Enemy(world.worldHeight, world.worldWidth);
+                Player mangija1 = new Player(world.height, world.width);
+                Player mangija2 = new Player(world.height,world.width);
+                Enemy vaenlane1 = new Enemy(world.height, world.width);
+                Item sword = new Item(world.height,world.width,ItemType.SWORD);
+                Item hammer = new Item(world.height,world.width,ItemType.HAMMER);
+                Item dagger = new Item(world.height,world.width,ItemType.DAGGER);
+                world.items = Arrays.asList(sword,hammer,dagger);
                 // uue instantsi loomine --- uue mälukohaga objekti tekitamine
                 // kellel on kõik omadused mis on defineeritud tema klassis
 
@@ -32,7 +37,12 @@ public class game2 {
 
 
                 while (!input.equals("end")) {
-                mangija1.movePlayer(input,world.worldHeight,world.worldWidth);
+                mangija1.movePlayer(input,world.height,world.width);
+
+                for (Item item:world.items) {
+                        if(item.coordinateX == mangija1.coordinateX && item.coordinateY == mangija1.coordinateY);
+                        break;
+                }
                 world.printMap(mangija1.coordinateY,
                 mangija1.coordinateX, vaenlane1.coordinateY,
                 vaenlane1.coordinateX);
