@@ -11,17 +11,19 @@ public class Employee {
 
 
     public Employee (String eesnimi, String perekonnanimi, long isikukood, int vanus, boolean sugu, String telefoninumber, String aadress, double tunnitasu, double tunnid) {
-        this.eesnimi;
-        this.perekonnanimi;
-        this.isikukood;
-        this.vanus;
-        this.sugu;
-        this.telefoninumber;
-        this.aadress;
-        this.tunnitasu;
-        this.tunnid;
+        this.eesnimi  = eesnimi;
+        this.perekonnanimi = perekonnanimi;
+        this.isikukood = isikukood;
+        this.vanus = vanus;
+        this.sugu = sugu;
+        this.telefoninumber = telefoninumber;
+        this.aadress = aadress;
+        this.tunnitasu = tunnitasu;
+        this.tunnid = tunnid;
     }
-
+    public void palk() {
+        System.out.println(eesnimi + perekonnanimi + "saab lepiguliselt brutopalka" +(tunnitasu*tunnid) +"euri.");
+    }
     @Override
     public String toString() {
         return "Employee{" +
@@ -35,4 +37,5 @@ public class Employee {
                 ", tunnitasu=" + tunnitasu +
                 ", tunnid=" + tunnid +
                 '}';
+    }
 }
