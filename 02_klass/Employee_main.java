@@ -4,6 +4,6 @@ public class Employee_main {
         Employee two = new Employee("Maria", "Kivi", 49201164277, 30);
         System.out.println(one);
         System.out.println(two);
-        one.sayHello();
-        two.sayHello();
+        one.palk();
+        two.palk();
 }

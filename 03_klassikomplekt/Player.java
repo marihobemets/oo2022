@@ -10,6 +10,7 @@ public class Player {
     }
 
     public static int generateRandomCoordinate(int worldSize) {
+
         return (int) (Math.random()*(worldSize-2))+1;
     }
 
