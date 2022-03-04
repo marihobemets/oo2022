@@ -1,13 +1,15 @@
+import java.util.List;
+
 public class World {
     static int height;
     static int width;
-    List <Item> items;
+    List<Item> items;
 
     public World(int height, int width) {
         this.height = height;
         this.width = width;
     }
-    public static void printMap(int playerCoordinateY, int playerCoordinateX,
+    public void printMap(int playerCoordinateY, int playerCoordinateX,
                                 int enemyCoordinateY, int enemyCoordianteX) {
         // fori --> pakub
         char symbol;   // deklareerib 1x muutuja, mitte iga kord deklareerib selle muutuja
