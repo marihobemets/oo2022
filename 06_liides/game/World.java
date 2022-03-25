@@ -6,6 +6,8 @@ public class World {
     static int height;
     static int width;
     List<Item> items;
+    List<Character> characters;
+    List<WorldObject> worldObjects;
 
     public World(int height, int width) {
         this.height = height;

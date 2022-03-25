@@ -30,4 +30,14 @@ public class Item implements WorldObject {
     public int generateRandomCoordinate(int worldSize) {
         return (int) (Math.random()*(worldSize-2))+1;
     }
+
+    @Override
+    public String toString() {
+        return "game.Item{" +
+                "coordinateY=" + coordinateY +
+                ", coordinateX=" + coordinateX +
+                ", strength=" + strength +
+                ", itemType=" + itemType +
+                '}';
+    }
 }

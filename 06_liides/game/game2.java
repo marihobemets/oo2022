@@ -26,6 +26,14 @@ public class game2 {
                 Item hammer = new Item(world.height,world.width,ItemType.HAMMER);
                 Item dagger = new Item(world.height,world.width,ItemType.DAGGER);
                 world.items = Arrays.asList(sword,hammer,dagger);
+
+               // world.characters.add(mangija1);
+                //world.characters.add(vaenlane1);
+                //world.characters.add(sword);
+
+                //world.characters.add(mangija1);
+                //world.characters.add(vaenlane1);
+                //world.characters.add(sword);
                 // uue instantsi loomine --- uue mälukohaga objekti tekitamine
                 // kellel on kõik omadused mis on defineeritud tema klassis
 
@@ -39,12 +47,12 @@ public class game2 {
 
 
                 while (!input.equals("end")) {
-                mangija1.movePlayer(input,world.height,world.width);
-
-                for (Item item:world.items) {
-                        if(item.coordinateX == mangija1.coordinateX && item.coordinateY == mangija1.coordinateY);
-                        break;
-                }
+                        mangija1.movePlayer(input,world.height,world.width);
+                        for (Item item:world.items) {
+                                if(item.coordinateX == mangija1.coordinateX && item.coordinateY == mangija1.coordinateY){
+                                        mangija1.addItem(item);
+                                }
+                        }
                 world.printMap(mangija1.coordinateY,
                 mangija1.coordinateX, vaenlane1.coordinateY,
                 vaenlane1.coordinateX);

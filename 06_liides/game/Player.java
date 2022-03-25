@@ -7,8 +7,7 @@ public class Player implements WorldObject {
     Item item;
 
     public Player(int worldHeight, int worldWidth) {
-        this.coordinateY = generateRandomCoordinate(worldHeight);
-        this.coordinateX = generateRandomCoordinate(worldWidth);
+        super(worldHeight, worldWidth); // super on sama mis new Character();
         this.direction = Direction.UP;
     }
 
@@ -23,7 +22,7 @@ public class Player implements WorldObject {
         return (int) (Math.random()*(worldSize-2))+1;
     }
 
-    public  void movePlayer(String input, int worldHeight, int worldWidth) {
+    public String movePlayer(String input, int worldHeight, int worldWidth) {
         switch (input) {
             case "a":
                 direction = Direction.LEFT;
@@ -60,6 +59,15 @@ public class Player implements WorldObject {
                 }
                 break;
         }
+        @Override
+        public String toString() {
+            return "game.Player{" +
+                    "coordinateY=" + coordinateY +
+                    ", coordinateX=" + coordinateX +
+                    ", direction=" + direction +
+                    ", item=" + item +
+                    '}';
+
 
 //            if (direction == game.Direction.LEFT) {
 //                playerCoordinateX--;
