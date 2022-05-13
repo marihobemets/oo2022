@@ -1,5 +1,6 @@
 package ee.mihkel.webshop.controller;
 
+
 import ee.mihkel.webshop.model.Product;
 import ee.mihkel.webshop.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@CrossOrigin(origins ="http://localhost:3000")
 public class ProductController {
 
     @Autowired
@@ -23,8 +26,9 @@ public class ProductController {
     }
 
     @DeleteMapping("products/{index}")//localhost:8008/strings/1 DELETE
-    public void deleteProduct(@PathVariable int index){
+    public List<Product> deleteProduct(@PathVariable int index){
         productRepository.deleteById(index);
+        return productRepository.findAll();
     }
 
     @DeleteMapping("products")//localhost:8008/strings/ POST
